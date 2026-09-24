@@ -1,0 +1,16 @@
+# Пример inventory для Kubespray.
+# Скопируйте в inventory.ini и подставьте актуальные IP из `yc compute instance list`.
+
+[kube_control_plane]
+k8s-control-plane ansible_host=<EXTERNAL_IP_CONTROL_PLANE> ip=<INTERNAL_IP_CONTROL_PLANE>
+
+[kube_node]
+k8s-worker-1 ansible_host=<EXTERNAL_IP_WORKER_1> ip=<INTERNAL_IP_WORKER_1>
+k8s-worker-2 ansible_host=<EXTERNAL_IP_WORKER_2> ip=<INTERNAL_IP_WORKER_2>
+
+[etcd:children]
+kube_control_plane
+
+[all:vars]
+ansible_user=ubuntu
+ansible_ssh_private_key_file=~/.ssh/id_ed25519

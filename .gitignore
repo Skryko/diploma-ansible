@@ -1,0 +1,4 @@
+inventory.ini
+!inventory.ini.example
+*.retry
+.DS_Store

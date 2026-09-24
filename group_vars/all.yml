@@ -1,0 +1,5 @@
+---
+kubeconfig_localhost: true
+kubeconfig_localhost_ansible_host: true
+supplementary_addresses_in_ssl_keys:
+  - "89.169.146.16"
